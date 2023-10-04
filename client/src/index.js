@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import logo from './logo.svg';
+import ReactDOMClient from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import Logo from './Logo';
 
 
 const inputClick = () => console.log("Clicked");
@@ -19,16 +19,17 @@ const App = () => {
   return (
     <div className="App">{element}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <Logo str1={'HELLO'}str2={"УБЛЮДОК"}str3={'Мать твою'}/>
       </header>
     </div>
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOMClient.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+ 
   </React.StrictMode>
 );
 

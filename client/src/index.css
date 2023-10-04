@@ -26,9 +26,46 @@ code {
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  fill: url(#grad--linear-1) ;
+  width: 100%;
+  max-width: 700px;
+  max-height: 300px;
 }
+stop {
+  -webkit-animation: colors 8s infinite;
+          animation: colors 8s infinite;
+}
+.stop-2 {
+  -webkit-animation-delay: -3s;
+          animation-delay: -3s;
+}
+.stop-3 {
+  -webkit-animation-delay: -6s;
+          animation-delay: -6s;
+}
+@keyframes colors {
+  15% {
+    stop-color: rgb(39, 151, 136);
+  }
+  30% {
+    stop-color: rgb(201, 54, 83);
+  }
+  45% {
+    stop-color: rgb(17, 156, 156);
+  }
+  60% {
+    stop-color: rgb(151, 194, 64);
+  }
+  75% {
+    stop-color: rgb(245, 113, 65);
+  }
+  90% {
+    stop-color: rgb(184, 71, 184);
+  }
+}
+
   .App-logo {
-    animation: App-logo-spin infinite 10s linear;
+    animation: App-logo-spin infinite 8s linear;
   }
 /* .App-header {
 
