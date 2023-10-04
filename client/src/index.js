@@ -17,9 +17,10 @@ const element = ( <div>
 
 const App = () => {
   return (
-    <div className="App">{element}
+    <div className="App">
       <header className="App-header">
       <Logo str1={'HELLO'}str2={"УБЛЮДОК"}str3={'Мать твою'}/>
+      {element}
       </header>
     </div>
   );
@@ -29,7 +30,6 @@ const root = ReactDOMClient.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
- 
   </React.StrictMode>
 );
 
