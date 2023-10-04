@@ -17,7 +17,7 @@ body {
   pointer-events: none;
 }
   .App-logo {
-    animation: App-logo-spin infinite 5s linear;
+    animation: App-logo-spin infinite 10s linear;
   }
 /* .App-header {
 
