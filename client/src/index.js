@@ -9,19 +9,34 @@ const inputClick = () => console.log("Clicked");
 const mouseOver = () => console.log("Mouse Over");
 const helpText = "Help text!";
 
-const element = ( <div>
+const element = ( <div className='elem_1'>
     <h1>{helpText}</h1><input placeholder={helpText} 
     onClick={inputClick} onMouseEnter={mouseOver}/>
     <p>{helpText === "Help text!" ? "Yes" : "No"}</p>
 </div>);
 
+class Header extends React.Component {
+  render() {
+    const { a, children } = this.props;
+  return (
+<header className={a}>
+  <div>
+  {children}
+  </div>
+</header>
+  );
+}
+}
+
 const App = () => {
   return (
+    <div>
     <div className="App">
-      <header className="App-header">
-      <Logo str1={'HELLO'}str2={"УБЛЮДОК"}str3={'Мать твою'}/>
-      {element}
-      </header>
+       <Header a={'App-header'}><Logo><a>React  App</a></Logo>
+       <div className='div_nav'><a href='#'>HELLO </a><a href='#'>WE HERE </a><a href='#'> ABOUT</a></div>
+       </Header> 
+    </div>
+    {element}
     </div>
   );
 }
