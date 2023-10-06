@@ -64,10 +64,10 @@ stop {
           animation-delay: -6s;
 }
 @keyframes colors {
-  15% {
+  75% {
     stop-color: rgb(39, 151, 136);
   }
-  30% {
+  90% {
     stop-color: rgb(201, 54, 83);
   }
   45% {
@@ -76,11 +76,14 @@ stop {
   60% {
     stop-color: rgb(151, 194, 64);
   }
-  75% {
+  15% {
     stop-color: rgb(245, 113, 65);
   }
-  90% {
+  30% {
     stop-color: rgb(184, 71, 184);
+  }
+  90% {
+    stop-color: rgb(184, 103, 71);
   }
 }
   .App-logo {
