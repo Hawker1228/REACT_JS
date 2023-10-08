@@ -16,25 +16,32 @@ class Header extends React.Component {
 }
 
 class App extends React.Component {
-  helpText = "Help text!";
+  constructor(props) {
+    super(props)
+    this.state = {
+      helpText: "Help text"
+    }
+    this.inputClick = this.inputClick.bind(this)
+  }
+
   render() {
     return (
-      <div>
       <div className="App">
-         <Header a={'App-header'}><Logo><a href='./index.js'>React  App</a></Logo>
-
+         <Header a={'App-header'}><Logo><p>React  App</p></Logo>
           <div className='div_nav'><a href='./index.js'>HELLO </a><a href='./index.js'>WE HERE </a><a href='./index.js'> ABOUT</a></div>
          </Header> 
-      </div>
-        <div className='elem_1'>
-          <h1>{this.helpText}</h1><input placeholder={this.helpText} 
+         <div className='elem_1'>
+          <h1>{this.state.helpText}</h1><input placeholder={this.state.helpText} 
           onClick={this.inputClick} onMouseEnter={this.mouseOver}/>
-          <p>{this.helpText === "Help text!" ? "Yes" : "No"}</p>
+          <p>{this.state.helpText === "Help text!" ? "Yes" : "No"}</p>
         </div>
       </div>
     )
   }
-  inputClick() {console.log("Clicked")}
+  inputClick() {
+    this.setState({helpText: "Changed"})
+    console.log("Clicked")
+  }
   mouseOver() {console.log("Mouse over")}
 }
 
