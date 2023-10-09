@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOMClient from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Logo from './Logo';
+import Logo from './components/Logo';
+import Button from './components/Button';
+import JsonParse from './components/JsonParse';
 
 class Header extends React.Component {
   render() {
@@ -14,36 +16,43 @@ class Header extends React.Component {
   );
 }
 }
-
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      helpText: "Help text"
+      helpText: "Welcome",
+      userData: ""
     }
-    this.inputClick = this.inputClick.bind(this)
+    this.inputClick = this.inputClick.bind(this) //СВЯЗЫВАЕМ Input.Click с конструктором
   }
 
-  render() {
+  render() {let test_id = 'p_test';
     return (
       <div className="App">
-         <Header a={'App-header'}><Logo><p>React  App</p></Logo>
+        <Header a={'App-header'}><Logo><p>React  App</p></Logo>
           <div className='div_nav'><a href='./index.js'>HELLO </a><a href='./index.js'>WE HERE </a><a href='./index.js'> ABOUT</a></div>
-         </Header> 
+        </Header> 
          <div className='elem_1'>
-          <h1>{this.state.helpText}</h1><input placeholder={this.state.helpText} 
-          onClick={this.inputClick} onMouseEnter={this.mouseOver}/>
-          <p>{this.state.helpText === "Help text!" ? "Yes" : "No"}</p>
-        </div>
+          <h1>{this.state.helpText}</h1>
+          <h2>{this.state.userData}</h2> 
+          <input placeholder={this.state.helpText}
+            onChange={event => this.setState({ userData: event.target.value })} //Отслеживаем изменение placeholder  и меняем значение userData
+            onClick={this.inputClick} onMouseEnter={this.mouseOver}/>
+          <p>{this.state.helpText === "Welcome" ? "Yes" : "No"}</p>
+          <p id='p_test'>0</p>
+          <Button p_id={test_id} text='Увеличить'></Button>
+          </div>
+          <JsonParse></JsonParse>
       </div>
     )
   }
   inputClick() {
-    this.setState({helpText: "Changed"})
+    this.setState({helpText: "Changed"}) //УСТАНАВЛИВАЕМ СОСТОЯНИЕ
     console.log("Clicked")
   }
   mouseOver() {console.log("Mouse over")}
 }
+
 
 const root = ReactDOMClient.createRoot(document.getElementById('root'));
 root.render(
