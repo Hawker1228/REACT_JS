@@ -1,28 +1,23 @@
 import React from 'react';
+import Records from './records.json'
 
 class JsonParse extends React.Component {
-    render() {
-        
-var responce = {
-    "0":{
-       "data":{ "name":"vas" }
-    },
-    "1":{
-       "data":{ "name":"vas2" }
-    }
- }
+  render() {
+   return(
+      
+      Records.map(record => {
+         return(
+           <div className="box" key={ record.id }>
+             <h3>{ record.title }</h3>
+             <p>{ record.content }</p>
+           </div>
+         )
+       })
+      
+   )
+  }
+}
+export default JsonParse
+
+
  
- for(var i in responce){
-   console.log(responce[i].data.name);
-   var st = responce[i].data.name;
- }
- return (
-    <div>
-    <h3>HELLO</h3>
-    <p className="id"></p>
-    <p className="status">{st}</p>
-    </div>
- );
-}
-}
-export default JsonParse;

@@ -4,7 +4,8 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Logo from './components/Logo';
 import Button from './components/Button';
-import JsonParse from './components/JsonParse';
+import JsonParse from './components/JsonParse'
+
 
 class Header extends React.Component {
   render() {
@@ -42,7 +43,9 @@ class App extends React.Component {
           <p id='p_test'>0</p>
           <Button p_id={test_id} text='Увеличить'></Button>
           </div>
-          <JsonParse></JsonParse>
+          <br />
+
+          <JsonParse></JsonParse> {/* ЗАГРУЖАЕМ КОМПОНЕНТ С ОТРИСОВКОЙ JSON */}
       </div>
     )
   }

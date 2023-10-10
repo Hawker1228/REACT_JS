@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "title": "WebStylepress",
+        "content": "Content goes here..."
+    },
+    {
+        "id": 2,
+        "title": "WSP",
+        "content": "Lorem ipsum dolor set amet..."
+    },
+    {
+        "id": 3,
+        "title": "Records",
+        "content": "Here is hhow we display records from json file in react js..."
+    }
+]
